@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "recsys-core"
+version = "0.1.0"
+description = ""
+authors = ["dante.am <dante.avino@alum.esci.upf.edu>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+streamlit = "^1.42.2"
+pydantic = "^2.10.6"
+plotly = "^6.0.0"
+matplotlib = "^3.10.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

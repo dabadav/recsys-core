@@ -1,0 +1,48 @@
+{
+    "protocol_id": "PR230",
+    "name": "Quality control (AR)",
+    "type": "assessment",
+    "difficulty_motor": "mid",
+    "difficulty_cognitive": "high",
+    "body_targets": {
+        "finger": 0,
+        "wrist": 0,
+        "arm": 0,
+        "shoulder": 0
+    },
+    "motor_features": {
+        "reaching": 0,
+        "grasping": 0,
+        "pinching": 0,
+        "pronation_supination": 0,
+        "range_of_motion_h": "mid",
+        "range_of_motion_v": "low"
+    },
+    "cognitive_features": {
+        "processing_speed": 1,
+        "attention": 0,
+        "visual_language": 1,
+        "visualspatial_processing_awareness_neglect": 0,
+        "coordination": 0,
+        "memory_wm": 0,
+        "memory_semantic": 0,
+        "math": 0,
+        "daily_living_activity": 0,
+        "symbolic_understanding": 0,
+        "semantic_processing": 0
+    },
+    "cognitive_demand": 0.8,
+    "gamification": {
+        "type": "AR",
+        "feedback_modes": [
+            "visual",
+            "haptic"
+        ]
+    },
+    "safety_constraints": {
+        "max_duration": 25,
+        "contraindications": [
+            "severe_neglect"
+        ]
+    }
+}

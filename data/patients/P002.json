@@ -1,0 +1,60 @@
+{
+  "patient_id": "P002",
+  "demographics": {
+    "age": 78,
+    "gender": "female",
+    "height": 196,
+    "handedness": "left"
+  },
+  "stroke_info": {
+    "type": "ischemic",
+    "location": "left MCA",
+    "heminegligence": 0,
+    "paretic_side": "left",
+    "onset_date": "2021-07-15"
+  },
+  "clinical_scores": {
+    "ARAT": {
+      "grasp": 9,
+      "grip": 11,
+      "pinch": 8,
+      "gross_movement": 2
+    },
+    "MoCA": {
+      "VISUOSPATIAL": 4,
+      "NAMING": 2,
+      "MEMORY": 3,
+      "ATTENTION": 5,
+      "LANGUAGE": 1,
+      "ABSTRACTION": 1,
+      "DELAYED_RECALL": 3,
+      "ORIENTATION": 3
+    }
+  },
+  "recovery_profile": {
+    "group": "B2",
+    "expected_adherence": 0.75,
+    "motor_trajectory": {
+      "slope": 0.2,
+      "variance": 0.05
+    },
+    "affective_baseline": {
+      "mood": 3.2,
+      "motivation": 2.8
+    }
+  },
+  "gaming_profile": {
+    "videogame_experience": 0,
+    "computer_experience": 1,
+    "preferred_modalities": [
+      "AR",
+      "controller-based"
+    ]
+  },
+  "clinician_notes": "Patient has mild neglect and struggles with complex tasks. Prefers gamified activities.",
+  "tags": [
+    "mild_neglect",
+    "low_motivation",
+    "prefers_gamification"
+  ]
+}

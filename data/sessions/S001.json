@@ -1,0 +1,21 @@
+{
+    "session_id": "S001",
+    "patient_id": "P001",
+    "protocol_id": "PR200",
+    "timestamp": "2023-10-25T14:30:00Z",
+    "performance": {
+      "adherence": 0.9,
+      "kinematics": {
+        "smoothness": 0.82,
+        "path_efficiency": 0.78
+      }
+    },
+    "difficulty_modulation": {
+      "initial": "medium",
+      "final": "easy"
+    },
+    "affective_state": {
+      "pre_session": {"mood": 4, "motivation": 3},
+      "post_session": {"mood": 4, "motivation": 4}
+    }
+  }

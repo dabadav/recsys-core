@@ -1,0 +1,91 @@
+classDiagram
+    class StrokeInfo {
+        +str type
+        +str location
+        +int heminegligence
+        +str paretic_side
+        +datetime onset_date
+        +parse_onset_date() datetime
+    }
+
+    class ARAT {
+        +float grasp (0-18)
+        +float grip (0-12)
+        +float pinch (0-18)
+        +float gross_movement (0-9)
+        +total_score() float
+        +deficit() Dict[str, float]
+    }
+
+    class MoCA {
+        +float visuospatial (0-5)
+        +float naming (0-3)
+        +float memory (0-5)
+        +float attention (0-6)
+        +float language (0-3)
+        +float abstraction (0-2)
+        +float delayed_recall (0-5)
+        +float orientation (0-6)
+        +total_score() float
+        +deficit() Dict[str, float]
+    }
+
+    class ClinicalScores {
+        +ARAT ARAT
+        +MoCA MoCA
+    }
+
+    class RecoveryProfile {
+        +str group
+        +float expected_adherence
+        +Dict[str, float] motor_trajectory
+        +Dict[str, float] affective_baseline
+    }
+
+    class WeeklyPlan {
+        +date week_start
+        +List[PrescribedProtocol] prescriptions
+        +List[SessionMetrics] performed_sessions
+        +total_prescribed_time() float
+        +total_performed_time() float
+        +adherence() float
+        +protocol_adherence() Dict[str, float]
+    }
+
+    class SessionMetrics {
+        +datetime timestamp
+        +str protocol_id
+        +float difficulty_modulator
+        +float performance
+        +float adherence
+        +float time_spent
+        +Optional[float] motor_engagement
+        +Optional[float] cognitive_engagement
+        +combined_metric() float
+    }
+
+    class Patient {
+        +str patient_id
+        +Dict demographics
+        +StrokeInfo stroke_info
+        +ClinicalScores clinical_scores
+        +RecoveryProfile recovery_profile
+        +Dict gaming_profile
+        +Optional[str] clinician_notes
+        +List[str] tags
+        +List[WeeklyPlan] treatment_history
+        +current_plan() Optional[WeeklyPlan]
+    }
+
+    Patient "1" *-- "1" StrokeInfo
+    Patient "1" *-- "1" ClinicalScores
+    Patient "1" *-- "1" RecoveryProfile
+    Patient "1" *-- "many" WeeklyPlan : treatment_history
+
+    ClinicalScores "1" *-- "1" ARAT
+    ClinicalScores "1" *-- "1" MoCA
+
+    WeeklyPlan "1" *-- "many" PrescribedProtocol : prescriptions
+    WeeklyPlan "1" *-- "many" SessionMetrics : performed_sessions
+
+    SessionMetrics "1" -- "1" PrescribedProtocol : prescription_id

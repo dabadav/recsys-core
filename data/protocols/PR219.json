@@ -1,0 +1,48 @@
+{
+    "protocol_id": "PR219",
+    "name": "Hockey (AR)",
+    "type": "motor",
+    "difficulty_motor": "high",
+    "difficulty_cognitive": "low",
+    "body_targets": {
+        "finger": 0,
+        "wrist": 0,
+        "arm": 1,
+        "shoulder": 1
+    },
+    "motor_features": {
+        "reaching": 1,
+        "grasping": 1,
+        "pinching": 0,
+        "pronation_supination": 0,
+        "range_of_motion_h": "high",
+        "range_of_motion_v": "low"
+    },
+    "cognitive_features": {
+        "processing_speed": 1,
+        "attention": 0,
+        "visual_language": 1,
+        "visualspatial_processing_awareness_neglect": 1,
+        "coordination": 1,
+        "memory_wm": 1,
+        "memory_semantic": 1,
+        "math": 0,
+        "daily_living_activity": 1,
+        "symbolic_understanding": 0,
+        "semantic_processing": 0
+    },
+    "cognitive_demand": 0.8,
+    "gamification": {
+        "type": "AR",
+        "feedback_modes": [
+            "visual",
+            "haptic"
+        ]
+    },
+    "safety_constraints": {
+        "max_duration": 25,
+        "contraindications": [
+            "severe_neglect"
+        ]
+    }
+}

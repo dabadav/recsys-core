@@ -1,0 +1,48 @@
+{
+    "protocol_id": "PR205",
+    "name": "Alphabet (AR)",
+    "type": "balanced",
+    "difficulty_motor": "mid",
+    "difficulty_cognitive": "mid",
+    "body_targets": {
+        "finger": 0,
+        "wrist": 0,
+        "arm": 1,
+        "shoulder": 1
+    },
+    "motor_features": {
+        "reaching": 1,
+        "grasping": 0,
+        "pinching": 0,
+        "pronation_supination": 1,
+        "range_of_motion_h": "mid",
+        "range_of_motion_v": "mid"
+    },
+    "cognitive_features": {
+        "processing_speed": 1,
+        "attention": 0,
+        "visual_language": 0,
+        "visualspatial_processing_awareness_neglect": 1,
+        "coordination": 1,
+        "memory_wm": 0,
+        "memory_semantic": 0,
+        "math": 0,
+        "daily_living_activity": 1,
+        "symbolic_understanding": 0,
+        "semantic_processing": 0
+    },
+    "cognitive_demand": 0.8,
+    "gamification": {
+        "type": "AR",
+        "feedback_modes": [
+            "visual",
+            "haptic"
+        ]
+    },
+    "safety_constraints": {
+        "max_duration": 25,
+        "contraindications": [
+            "severe_neglect"
+        ]
+    }
+}

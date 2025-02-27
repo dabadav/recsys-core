@@ -1,0 +1,61 @@
+classDiagram
+    class Patient {
+        +List[Prescription] prescriptions
+        +List[Session] sessions
+        +WeeklyPrescriptionAggregator weekly_aggregator
+        +ProtocolSessionsAggregator protocol_aggregator
+    }
+
+    class Protocol {
+        +List[Prescription] prescriptions
+        +PatientSessionsAggregator patient_aggregator
+    }
+
+    class Prescription {
+        +Patient patient
+        +Protocol protocol
+        +DateRange period
+    }
+
+    class Session {
+        +Patient patient
+        +Protocol protocol
+        +Prescription prescription
+        +DateTime timestamp
+    }
+
+    class WeeklyPrescriptionAggregator {
+        +Dict[Week, PrescriptionSummary] weekly_summaries
+        +compute_adherence()
+        +compute_quality_metrics()
+    }
+
+    class ProtocolSessionsAggregator {
+        +Dict[Protocol, ProtocolStats] protocol_stats
+        +compute_protocol_scores()
+        +track_progress()
+    }
+
+    class PatientSessionsAggregator {
+        +Dict[Patient, PatientProtocolStats] patient_stats
+        +compute_average_scores()
+        +compare_performance()
+    }
+
+    %% Core Relationships
+    Patient "1" *-- "many" Prescription : prescriptions
+    Patient "1" *-- "many" Session : sessions
+    Protocol "1" *-- "many" Prescription : prescriptions
+
+    Session "1" -- "1" Prescription : fulfills
+    Session "1" -- "1" Protocol : uses
+
+    %% Aggregation Relationships
+    Patient "1" *-- "1" WeeklyPrescriptionAggregator : weekly view
+    Patient "1" *-- "1" ProtocolSessionsAggregator : protocol scores
+    Protocol "1" *-- "1" PatientSessionsAggregator : patient stats
+
+    %% Data Flow
+    WeeklyPrescriptionAggregator ..> Prescription : aggregates
+    ProtocolSessionsAggregator ..> Session : analyzes
+    PatientSessionsAggregator ..> Session : collects
