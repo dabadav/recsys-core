@@ -1,21 +1,12 @@
 {
     "session_id": "S001",
     "patient_id": "P001",
-    "protocol_id": "PR200",
-    "timestamp": "2023-10-25T14:30:00Z",
-    "performance": {
-      "adherence": 0.9,
-      "kinematics": {
-        "smoothness": 0.82,
-        "path_efficiency": 0.78
-      }
-    },
-    "difficulty_modulation": {
-      "initial": "medium",
-      "final": "easy"
-    },
-    "affective_state": {
-      "pre_session": {"mood": 4, "motivation": 3},
-      "post_session": {"mood": 4, "motivation": 4}
-    }
-  }
+    "protocol_id": "PR10",
+    "prescription_id": "PRESC001",
+    "timestamp": "2024-02-19 12:00:00",
+    "duration": 35.35847652186102,
+    "difficulty_modulator": 0.7444487976072353,
+    "performance_score": 0.8924596997794458,
+    "prescribed_duration": 0.0,
+    "adherence": 0.0
+}

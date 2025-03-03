@@ -7,9 +7,10 @@
 # - Cognitive: VISUALSPATIAL_PROCESSING, MEMORY_WM, ATTENTION, LANGUAGE (0 or 1)
 
 # Scoring Logic
-# - Motor Similarity: Sum of (deficit * relevance) for each motor subscale.
-# - Cognitive Similarity: Sum of (deficit * relevance) for each cognitive subscale.
-# - Total Score: Motor Similarity + Cognitive Similarity.
+# @ PPF
+# @ DM + Performance
+# @
+
 from models.patient import Patient
 from models.protocol import Protocol
 from typing import Callable, Tuple, Dict, List, Optional, Any

@@ -62,40 +62,6 @@ def generate_weekly_plan(scored_protocols: List[Dict]) -> Dict[str, List[Dict]]:
 
     return weekly_plan
 
-# def generate_weekly_plan(scored_protocols: List[Dict]) -> Dict[str, List[Dict]]:
-#     """Distribute protocols across the week, balancing motor and cognitive activities."""
-#     weekly_plan = {
-#         "Monday": [],
-#         "Tuesday": [],
-#         "Wednesday": [],
-#         "Thursday": [],
-#         "Friday": [],
-#         "Saturday": [],
-#         "Sunday": []
-#     }
-
-#     # Separate motor and cognitive protocols
-#     motor_protocols = [p for p in scored_protocols if p["type"] == "motor"]
-#     cognitive_protocols = [p for p in scored_protocols if p["type"] == "cognitive"]
-
-#     # Assign protocols to days
-#     for i, day in enumerate(weekly_plan.keys()):
-#         if i % 2 == 0:  # Motor-focused days (Monday, Wednesday, Friday, etc.)
-#             if motor_protocols:
-#                 weekly_plan[day].append(motor_protocols.pop(0))
-#         else:  # Cognitive-focused days (Tuesday, Thursday, etc.)
-#             if cognitive_protocols:
-#                 weekly_plan[day].append(cognitive_protocols.pop(0))
-
-#         # Add a second protocol if time allows
-#         if sum(p["safety_constraints"]["max_duration"] for p in weekly_plan[day]) < 60:  # 60 mins/day
-#             if i % 2 == 0 and motor_protocols:
-#                 weekly_plan[day].append(motor_protocols.pop(0))
-#             elif cognitive_protocols:
-#                 weekly_plan[day].append(cognitive_protocols.pop(0))
-
-#     return weekly_plan
-
 def main():
 
     # Initialize repositories

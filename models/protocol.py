@@ -87,7 +87,7 @@ class Protocol(BaseModel):
 
     # Example protocol for documentation
     class Config:
-        schema_extra = {
+        json_schema_extra = {
             "example": {
                 "protocol_id": "PR200",
                 "name": "VR Arm Training",
